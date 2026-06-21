@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google One Giveaway — by Iqbal Hingorjo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --g-blue: #1a73e8;
+            --g-blue-dark: #1557b0;
+            --g-green: #34a853;
+            --g-yellow: #fbbc04;
+            --g-red: #ea4335;
+            --surface: #ffffff;
+            --surface-2: #f8f9fa;
+            --border: #e8eaed;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --text-hint: #80868b;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            color: var(--text-primary);
+        }
+
+        /* ─── HEADER ─────────────────────────────────────────── */
+        .site-header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .g-logo {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+        }
+
+        .g-logo .g {
+            color: #4285f4;
+        }
+
+        .g-logo .o1 {
+            color: #ea4335;
+        }
+
+        .g-logo .o2 {
+            color: #fbbc04;
+        }
+
+        .g-logo .g2 {
+            color: #4285f4;
+        }
+
+        .g-logo .l {
+            color: #34a853;
+        }
+
+        .g-logo .e {
+            color: #ea4335;
+        }
+
+        .g-logo .one {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 18px;
+            margin-left: 4px;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 22px;
+            background: var(--border);
+            margin: 0 12px;
+        }
+
+        .header-label {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* ─── HERO ─────────────────────────────────────────────── */
+        .hero {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+
+        .g-one-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e8f0fe 0%, #fce8e6 100%);
+            border: 1px solid #c9d8fb;
+            border-radius: 100px;
+            padding: 6px 16px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--g-blue);
+            margin-bottom: 24px;
+        }
+
+        .g-one-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--g-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.3);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Google Sans Display', sans-serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(90deg, #4285f4, #34a853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .benefits-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .benefit-chip svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        /* ─── MAIN LAYOUT ──────────────────────────────────────── */
+        .main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 36px 20px 60px;
+        }
+
+        /* ─── SLOTS ALERT ─────────────────────────────────────── */
+        .slots-alert {
+            background: #fff8e1;
+            border: 1px solid #f9c23c;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+
+        .slots-alert .icon {
+            font-size: 20px;
+        }
+
+        .slots-alert strong {
+            color: #e37400;
+        }
+
+        .slots-alert span {
+            color: var(--text-secondary);
+        }
+
+        /* ─── HOW IT WORKS ────────────────────────────────────── */
+        .how-it-works {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-label {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--text-hint);
+            margin-bottom: 16px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: white;
+        }
+
+        .step-num.blue {
+            background: #4285f4;
+        }
+
+        .step-num.green {
+            background: var(--g-green);
+        }
+
+        .step-num.yellow {
+            background: var(--g-yellow);
+            color: #5f4a00;
+        }
+
+        .step-num.red {
+            background: var(--g-red);
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* ─── FORM CARD ─────────────────────────────────────────── */
+        .form-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .form-card-header {
+            background: #f8f9fa;
+            border-bottom: 3px solid var(--g-blue);
+            padding: 20px 24px;
+        }
+
+        .form-card-header h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .form-card-header p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .form-body {
+            padding: 28px 24px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 520px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── FIELD GROUPS ─────────────────────────────────────── */
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field-group label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .field-group label .required {
+            color: var(--g-red);
+            margin-left: 2px;
+        }
+
+        .field-group input,
+        .field-group select,
+        .field-group textarea {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: var(--text-primary);
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            transition: border-color 0.18s, box-shadow 0.18s;
+            outline: none;
+            width: 100%;
+        }
+
+        .field-group input:focus,
+        .field-group select:focus,
+        .field-group textarea:focus {
+            border-color: var(--g-blue);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.12);
+        }
+
+        .field-group input.error,
+        .field-group select.error,
+        .field-group textarea.error {
+            border-color: var(--g-red);
+            box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.1);
+        }
+
+        .field-error {
+            font-size: 12px;
+            color: var(--g-red);
+            display: none;
+        }
+
+        .field-group textarea {
+            resize: vertical;
+            min-height: 90px;
+            line-height: 1.5;
+        }
+
+        .field-hint {
+            font-size: 12px;
+            color: var(--text-hint);
+            margin-top: 2px;
+        }
+
+        /* ─── SECTION DIVIDER ─────────────────────────────────── */
+        .form-section-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 4px 0;
+        }
+
+        .form-section-divider span {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--text-hint);
+            white-space: nowrap;
+        }
+
+        .form-section-divider::before,
+        .form-section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── CHECKBOX ──────────────────────────────────────────── */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            accent-color: var(--g-blue);
+            cursor: pointer;
+            margin-top: 1px;
+        }
+
+        .checkbox-group label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .checkbox-group label a {
+            color: var(--g-blue);
+            text-decoration: none;
+        }
+
+        /* ─── SUBMIT AREA ──────────────────────────────────────── */
+        .form-footer {
+            padding: 16px 24px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-submit {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+            background: var(--g-blue);
+            border: none;
+            border-radius: 100px;
+            padding: 13px 32px;
+            cursor: pointer;
+            transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover {
+            background: var(--g-blue-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        .btn-submit:disabled {
+            background: #9aa0a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-submit .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .submit-note {
+            font-size: 12px;
+            color: var(--text-hint);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ─── SUCCESS STATE ────────────────────────────────────── */
+        .success-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 56px 32px;
+            gap: 16px;
+        }
+
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #e6f4ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .success-screen h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .success-screen p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .success-ref {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px 20px;
+            font-family: monospace;
+            font-size: 14px;
+            color: var(--g-blue);
+            letter-spacing: 1px;
+        }
+
+        /* ─── FOOTER ─────────────────────────────────────────── */
+        .site-footer {
+            text-align: center;
+            padding: 32px 20px 24px;
+            font-size: 12px;
+            color: var(--text-hint);
+            line-height: 1.8;
+        }
+
+        .site-footer a {
+            color: var(--g-blue);
+            text-decoration: none;
+        }
+
+        /* ─── RESPONSIVE ─────────────────────────────────────── */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 32px 16px 28px;
+            }
+
+            .form-body {
+                padding: 20px 16px;
+            }
+
+            .form-card-header {
+                padding: 16px;
+            }
+
+            .form-footer {
+                padding: 14px 16px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="g-logo">
+            <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span
+                class="l">l</span><span class="e">e</span>
+            <span class="one">One</span>
+        </div>
+        <div class="header-divider"></div>
+        <span class="header-label">Student Giveaway</span>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="g-one-badge">
+            <span class="dot"></span>
+            1 Slot Available
+        </div>
+        <h1>Win <span class="accent">Google One</span> Premium<br>Access — Free</h1>
+        <p>Iqbal Hingorjo is giving away one Google One family membership slot to a deserving Pakistani university
+            student. Apply below — one winner will be selected randomly.</p>
+
+        <div class="benefits-strip">
+            <div class="benefit-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2">
+                    <path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" />
+                    <path d="M12 12h.01" />
+                </svg>
+                Gemini Advanced
+            </div>
+            <div class="benefit-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2">
+                    <ellipse cx="12" cy="12" rx="10" ry="10" />
+                    <path d="M12 6v6l4 2" />
+                </svg>
+                Google AI Pro
+            </div>
+            <div class="benefit-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ea4335" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z" />
+                </svg>
+                Meet Premium
+            </div>
+            <div class="benefit-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fbbc04" stroke-width="2">
+                    <path d="M12 5v14M5 12l7-7 7 7" />
+                </svg>
+                Google Drive Storage
+            </div>
+            <div class="benefit-chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#9c27b0" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                </svg>
+                Google Flow & Veo
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- SLOTS ALERT -->
+        <div class="slots-alert">
+            <span class="icon">⚡</span>
+            <span><strong>Only 1 slot left</strong> — This giveaway closes once the slot is filled or the deadline
+                passes.</span>
+        </div>
+
+        <!-- HOW IT WORKS -->
+        <div class="how-it-works">
+            <div class="section-label">How it works</div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num blue">1</div>
+                    <p>Fill in your details as a verified university student</p>
+                </div>
+                <div class="step">
+                    <div class="step-num green">2</div>
+                    <p>Applications are reviewed and one winner picked randomly</p>
+                </div>
+                <div class="step">
+                    <div class="step-num yellow">3</div>
+                    <p>Winner gets a Google Family invite on their Gmail</p>
+                </div>
+                <div class="step">
+                    <div class="step-num red">4</div>
+                    <p>Enjoy Google One benefits instantly — for free!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM CARD -->
+        <div class="form-card">
+            <div class="form-card-header">
+                <h2>Application Form</h2>
+                <p>All fields marked with <span style="color:var(--g-red)">*</span> are required. Double-check your
+                    Gmail before submitting.</p>
+            </div>
+
+            <form id="giveawayForm" novalidate>
+                <div class="form-body">
+
+                    <!-- PERSONAL INFO -->
+                    <div class="form-section-divider"><span>Personal Information</span></div>
+
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. Muhammad Ali Khan"
+                                autocomplete="name" />
+                            <span class="field-error" id="fullName-err">Please enter your full name.</span>
+                        </div>
+                        <div class="field-group">
+                            <label for="phone">WhatsApp Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" />
+                            <span class="field-error" id="phone-err">Enter a valid Pakistani number.</span>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="gmail">Personal Gmail Address <span class="required">*</span></label>
+                        <input type="email" id="gmail" name="gmail" placeholder="yourname@gmail.com" />
+                        <span class="field-error" id="gmail-err">Enter a valid @gmail.com address.</span>
+                        <span class="field-hint">⚠ This is where your Google One invite will be sent. Must be Gmail
+                            only.</span>
+                    </div>
+
+                    <!-- ACADEMIC INFO -->
+                    <div class="form-section-divider"><span>Academic Information</span></div>
+
+                    <div class="field-group">
+                        <label for="university">University / Institute Name <span class="required">*</span></label>
+                        <input type="text" id="university" name="university"
+                            placeholder="e.g. Sindh Agriculture University, Tandojam" />
+                        <span class="field-error" id="university-err">Please enter your university name.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label for="degree">Degree Program <span class="required">*</span></label>
+                            <select id="degree" name="degree">
+                                <option value="">Select degree</option>
+                                <option>BS Computer Science</option>
+                                <option>BS Software Engineering</option>
+                                <option>BS Information Technology</option>
+                                <option>BS Electrical Engineering</option>
+                                <option>BBA / MBA</option>
+                                <option>BS Mathematics</option>
+                                <option>BS Physics</option>
+                                <option>BS Agriculture</option>
+                                <option>MBBS / Medical</option>
+                                <option>Other (mention below)</option>
+                            </select>
+                            <span class="field-error" id="degree-err">Please select your degree.</span>
+                        </div>
+                        <div class="field-group">
+                            <label for="semester">Current Semester / Year <span class="required">*</span></label>
+                            <select id="semester" name="semester">
+                                <option value="">Select semester</option>
+                                <option>1st Semester</option>
+                                <option>2nd Semester</option>
+                                <option>3rd Semester</option>
+                                <option>4th Semester</option>
+                                <option>5th Semester</option>
+                                <option>6th Semester</option>
+                                <option>7th Semester</option>
+                                <option>8th Semester (Final Year)</option>
+                                <option>Postgraduate / MS</option>
+                            </select>
+                            <span class="field-error" id="semester-err">Please select your semester.</span>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="rollNo">Roll Number / Student ID <span class="required">*</span></label>
+                        <input type="text" id="rollNo" name="rollNo" placeholder="e.g. SAU-2021-CS-045" />
+                        <span class="field-error" id="rollNo-err">Please enter your roll number.</span>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="uniEmail">University Email (if available)</label>
+                        <input type="email" id="uniEmail" name="uniEmail" placeholder="s2021@sau.edu.pk (optional)" />
+                        <span class="field-hint">Helps verify you are a student — optional but preferred.</span>
+                    </div>
+
+                    <!-- REASON -->
+                    <div class="form-section-divider"><span>Your Application</span></div>
+
+                    <div class="field-group">
+                        <label for="reason">Why do you want Google One access? <span class="required">*</span></label>
+                        <textarea id="reason" name="reason"
+                            placeholder="Tell us briefly how Google One benefits (Gemini, extra storage, Google AI Pro) would help your studies or projects. Be honest and genuine — 2 to 4 sentences."></textarea>
+                        <span class="field-error" id="reason-err">Please write at least 30 characters.</span>
+                    </div>
+
+                    <!-- CITY -->
+                    <div class="field-group">
+                        <label for="city">City <span class="required">*</span></label>
+                        <input type="text" id="city" name="city" placeholder="e.g. Karachi, Hyderabad, Lahore" />
+                        <span class="field-error" id="city-err">Please enter your city.</span>
+                    </div>
+
+                    <!-- TERMS -->
+                    <div class="checkbox-group" onclick="document.getElementById('terms').click()">
+                        <input type="checkbox" id="terms" name="terms" />
+                        <label for="terms" onclick="event.stopPropagation()">
+                            I confirm that I am a currently enrolled university student in Pakistan. I agree that my
+                            submitted data will be stored securely and used only to manage this giveaway by Iqbal
+                            Hingorjo. <a href="#" onclick="return false">Terms apply.</a>
+                        </label>
+                    </div>
+                    <span class="field-error" id="terms-err">You must agree to the terms to apply.</span>
+
+                </div>
+
+                <!-- FOOTER / SUBMIT -->
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <div class="spinner" id="spinner"></div>
+                        <span id="btnText">Submit Application →</span>
+                    </button>
+                    <p class="submit-note">
+                        Your data is submitted to a private Google Sheet accessible only to Iqbal Hingorjo.<br>
+                        No spam. No data selling. One winner selected randomly after the deadline.
+                    </p>
+                </div>
+            </form>
+
+            <!-- SUCCESS -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                </div>
+                <h2>Application Submitted! 🎉</h2>
+                <p>Your entry has been recorded. The winner will be selected randomly and contacted via WhatsApp and
+                    Gmail invite.</p>
+                <div class="success-ref" id="refCode"></div>
+                <p style="font-size:13px">Good luck! Follow Iqbal on Instagram <a href="https://instagram.com"
+                        style="color:var(--g-blue)">@iqbalhingorjo</a> for the announcement.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>This giveaway is managed by <strong>Iqbal Hingorjo</strong> — Freelance Developer, Hyderabad, Pakistan.</p>
+        <p>
+            <a href="https://iqbalkhan.engineer" target="_blank">iqbalkhan.engineer</a> &nbsp;·&nbsp;
+            Not affiliated with Google LLC.
+        </p>
+    </footer>
+
+    <!-- ─── SCRIPT ─────────────────────────────────────────────── -->
+    <script>
+        // ════════════════════════════════════════════════════
+        //  CONFIGURATION — REPLACE THESE TWO VALUES
+        // ════════════════════════════════════════════════════
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxWa0PFZ4dsHPBB-t__By4KiDD0ivstkMfAzQiFKY_4-CiHFIIQsAZOOEbva6oA5yY/exec";
+        //  e.g. "https://script.google.com/macros/s/AKfycby.../exec"
+        // ════════════════════════════════════════════════════
+
+        const form = document.getElementById("giveawayForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const spinner = document.getElementById("spinner");
+        const btnText = document.getElementById("btnText");
+        const successScreen = document.getElementById("successScreen");
+
+        const fields = {
+            fullName: { el: document.getElementById("fullName"), validate: v => v.trim().length >= 3 },
+            phone: { el: document.getElementById("phone"), validate: v => /^0[3][0-9]{9}$/.test(v.replace(/[-\s]/g, "")) },
+            gmail: { el: document.getElementById("gmail"), validate: v => /^[^\s@]+@gmail\.com$/i.test(v.trim()) },
+            university: { el: document.getElementById("university"), validate: v => v.trim().length >= 3 },
+            degree: { el: document.getElementById("degree"), validate: v => v !== "" },
+            semester: { el: document.getElementById("semester"), validate: v => v !== "" },
+            rollNo: { el: document.getElementById("rollNo"), validate: v => v.trim().length >= 2 },
+            reason: { el: document.getElementById("reason"), validate: v => v.trim().length >= 30 },
+            city: { el: document.getElementById("city"), validate: v => v.trim().length >= 2 },
+        };
+
+        function showError(key) {
+            fields[key].el.classList.add("error");
+            document.getElementById(key + "-err").style.display = "block";
+        }
+
+        function clearError(key) {
+            fields[key].el.classList.remove("error");
+            document.getElementById(key + "-err").style.display = "none";
+        }
+
+        Object.keys(fields).forEach(key => {
+            fields[key].el.addEventListener("input", () => {
+                if (fields[key].validate(fields[key].el.value)) clearError(key);
+            });
+        });
+
+        function validateAll() {
+            let ok = true;
+            Object.keys(fields).forEach(key => {
+                if (!fields[key].validate(fields[key].el.value)) {
+                    showError(key); ok = false;
+                } else {
+                    clearError(key);
+                }
+            });
+
+            const terms = document.getElementById("terms");
+            const termsErr = document.getElementById("terms-err");
+            if (!terms.checked) {
+                termsErr.style.display = "block"; ok = false;
+            } else {
+                termsErr.style.display = "none";
+            }
+
+            return ok;
+        }
+
+        function generateRef() {
+            return "GI-" + Date.now().toString(36).toUpperCase().slice(-6);
+        }
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            if (!validateAll()) {
+                form.querySelector(".field-group input.error, .field-group select.error, .field-group textarea.error")
+                    ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                return;
+            }
+
+            submitBtn.disabled = true;
+            spinner.style.display = "block";
+            btnText.textContent = "Submitting...";
+
+            const refCode = generateRef();
+            const timestamp = new Date().toLocaleString("en-PK", { timeZone: "Asia/Karachi" });
+
+            const payload = {
+                timestamp,
+                refCode,
+                fullName: document.getElementById("fullName").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                gmail: document.getElementById("gmail").value.trim(),
+                university: document.getElementById("university").value.trim(),
+                degree: document.getElementById("degree").value,
+                semester: document.getElementById("semester").value,
+                rollNo: document.getElementById("rollNo").value.trim(),
+                uniEmail: document.getElementById("uniEmail").value.trim(),
+                reason: document.getElementById("reason").value.trim(),
+                city: document.getElementById("city").value.trim(),
+            };
+
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                // With no-cors we can't read the response, assume success
+                form.style.display = "none";
+                successScreen.style.display = "flex";
+                document.getElementById("refCode").textContent = "Application ID: " + refCode;
+
+            } catch (err) {
+                submitBtn.disabled = false;
+                spinner.style.display = "none";
+                btnText.textContent = "Submit Application →";
+                alert("Something went wrong. Please check your internet connection and try again.");
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>
