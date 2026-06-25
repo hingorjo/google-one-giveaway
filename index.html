@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google One Giveaway — by Iqbal Hingorjo</title>
+    <title>Google One Giveaway — Winner Announced!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,100 +15,123 @@
             --surface-2: #f8f9fa; --border: #e8eaed; --text-primary: #202124;
             --text-secondary: #5f6368; --text-hint: #80868b;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
             --radius: 12px; --radius-sm: 8px;
         }
-        body { font-family: 'Roboto', sans-serif; background: #f0f4f8; min-height: 100vh; color: var(--text-primary); }
+        body { font-family: 'Roboto', sans-serif; background: #f0f4f8; min-height: 100vh; color: var(--text-primary); overflow-x: hidden; }
 
         /* HEADER */
         .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; gap: 10px; position: sticky; top: 0; z-index: 100; }
-        .g-logo { display: flex; align-items: center; gap: 3px; font-family: 'Google Sans', sans-serif; font-size: 22px; font-weight: 400; letter-spacing: -0.3px; }
+        .g-logo { display: flex; align-items: center; gap: 3px; font-family: 'Google Sans', sans-serif; font-size: 22px; font-weight: 400; }
         .g-logo .g { color: #4285f4; } .g-logo .o1 { color: #ea4335; } .g-logo .o2 { color: #fbbc04; }
         .g-logo .g2 { color: #4285f4; } .g-logo .l { color: #34a853; } .g-logo .e { color: #ea4335; }
         .g-logo .one { color: var(--text-secondary); font-weight: 500; font-size: 18px; margin-left: 4px; }
         .header-divider { width: 1px; height: 22px; background: var(--border); margin: 0 12px; }
         .header-label { font-family: 'Google Sans', sans-serif; font-size: 14px; color: var(--text-secondary); }
 
-        /* COUNTDOWN BANNER */
-        .countdown-banner {
+        /* COUNTDOWN SECTION */
+        .countdown-section {
             background: linear-gradient(135deg, #0f1724 0%, #1a2540 100%);
-            padding: 32px 24px;
+            padding: 48px 24px;
             text-align: center;
             border-bottom: 4px solid transparent;
             border-image: linear-gradient(90deg, #4285f4, #ea4335, #fbbc04, #34a853) 1;
         }
-        .announce-label { font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #fbbc04; margin-bottom: 10px; }
-        .countdown-banner h2 { font-family: 'Google Sans Display', sans-serif; font-size: clamp(20px, 4vw, 30px); font-weight: 700; color: #ffffff; margin-bottom: 24px; }
-        .countdown-banner h2 span { color: #4285f4; }
-        .countdown-boxes { display: flex; justify-content: center; gap: 12px; margin-bottom: 18px; }
-        .cd-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 20px; min-width: 80px; }
-        .cd-num { font-family: 'Google Sans', sans-serif; font-size: 36px; font-weight: 700; color: #ffffff; line-height: 1; display: block; }
+        .announce-label { font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #fbbc04; margin-bottom: 12px; }
+        .countdown-section h2 { font-family: 'Google Sans Display', sans-serif; font-size: clamp(22px, 4vw, 34px); font-weight: 700; color: #ffffff; margin-bottom: 28px; }
+        .countdown-section h2 span { color: #4285f4; }
+        .countdown-boxes { display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; }
+        .cd-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 18px 22px; min-width: 84px; }
+        .cd-num { font-family: 'Google Sans', sans-serif; font-size: 40px; font-weight: 700; color: #ffffff; line-height: 1; display: block; }
         .cd-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; display: block; }
-        .cd-separator { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.25); align-self: center; padding-bottom: 20px; }
-        .countdown-note { font-size: 13px; color: rgba(255,255,255,0.5); }
+        .cd-sep { font-size: 36px; font-weight: 700; color: rgba(255,255,255,0.2); align-self: center; padding-bottom: 22px; }
+        .countdown-note { font-size: 14px; color: rgba(255,255,255,0.5); }
         .countdown-note strong { color: #34a853; }
 
-        /* WINNER SECTION */
-        .winner-section {
-            display: none;
-            background: linear-gradient(135deg, #0a1f0f 0%, #0f2a1a 100%);
-            padding: 48px 24px;
+        /* WINNER SECTION — hidden until countdown ends */
+        .winner-section { display: none; }
+
+        /* WINNER HERO */
+        .winner-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0f2318 50%, #1a0a28 100%);
+            padding: 56px 24px 48px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
             border-bottom: 4px solid transparent;
-            border-image: linear-gradient(90deg, #34a853, #4285f4) 1;
+            border-image: linear-gradient(90deg, #4285f4, #ea4335, #fbbc04, #34a853) 1;
         }
-        .winner-label { font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #fbbc04; margin-bottom: 10px; }
-        .winner-section h2 { font-family: 'Google Sans Display', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: #ffffff; margin-bottom: 28px; }
-        .winner-section h2 span { color: #34a853; }
-        .video-wrap { max-width: 680px; margin: 0 auto 24px; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.5); aspect-ratio: 16/9; background: #000; }
-        .video-wrap iframe { width: 100%; height: 100%; border: none; }
-        .winner-note { font-size: 14px; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+        .trophy { font-size: 64px; margin-bottom: 16px; display: block; animation: trophyBounce 2s ease-in-out infinite; }
+        @keyframes trophyBounce { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+        .winner-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(52,168,83,0.15); border: 1px solid rgba(52,168,83,0.4); border-radius: 100px; padding: 6px 18px; font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #34a853; margin-bottom: 20px; }
+        .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #34a853; animation: livePulse 1.5s ease-in-out infinite; }
+        @keyframes livePulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.4); } }
+        .winner-hero h1 { font-family: 'Google Sans Display', sans-serif; font-size: clamp(28px, 6vw, 52px); font-weight: 700; color: #ffffff; margin-bottom: 12px; line-height: 1.15; }
+        .winner-hero h1 .name { color: #fbbc04; display: block; }
+        .winner-sub { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 32px; }
+        .winner-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 36px; }
+        .wmeta-chip { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; padding: 7px 16px; font-size: 13px; color: rgba(255,255,255,0.7); }
 
-        /* CONFETTI */
-        .confetti-piece { position: fixed; width: 10px; height: 10px; top: -10px; opacity: 0; animation: confettiFall linear forwards; z-index: 999; pointer-events: none; border-radius: 2px; }
-        @keyframes confettiFall { 0% { opacity: 1; transform: translateY(0) rotate(0deg); } 100% { opacity: 0; transform: translateY(100vh) rotate(720deg); } }
-
-        /* HERO */
-        .hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 48px 24px 40px; text-align: center; }
-        .g-one-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #e8f0fe 0%, #fce8e6 100%); border: 1px solid #c9d8fb; border-radius: 100px; padding: 6px 16px; font-family: 'Google Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--g-blue); margin-bottom: 24px; }
-        .g-one-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--g-red); }
-        .hero h1 { font-family: 'Google Sans Display', sans-serif; font-size: clamp(28px, 5vw, 42px); font-weight: 700; color: var(--text-primary); line-height: 1.2; margin-bottom: 16px; }
-        .hero h1 .accent { background: linear-gradient(90deg, #4285f4, #34a853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { font-size: 16px; color: var(--text-secondary); max-width: 540px; margin: 0 auto 28px; line-height: 1.6; }
-        .benefits-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 8px; }
-        .benefit-chip { display: flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 13px; color: var(--text-secondary); }
-        .benefit-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+        /* VIDEO */
+        .video-container { max-width: 700px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); aspect-ratio: 16/9; background: #000; position: relative; z-index: 1; }
+        .video-container iframe { width: 100%; height: 100%; border: none; }
 
         /* MAIN */
         .main { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; }
-        .closed-alert { background: #fce8e6; border: 1px solid #f5c6c2; border-radius: var(--radius-sm); padding: 16px 20px; display: flex; align-items: center; gap: 14px; margin-bottom: 28px; font-size: 14px; }
-        .closed-alert .icon { font-size: 26px; }
-        .closed-alert strong { color: #c5221f; font-size: 15px; display: block; margin-bottom: 2px; }
-        .closed-alert span { color: var(--text-secondary); }
-        .how-it-works { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; box-shadow: var(--shadow-sm); }
+
+        /* WINNER CARD */
+        .winner-card { background: var(--surface); border: 2px solid #34a853; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(52,168,83,0.15); overflow: hidden; margin-bottom: 28px; }
+        .winner-card-header { background: linear-gradient(135deg, #e6f4ea, #f0faf3); padding: 24px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #c8e6c9; }
+        .winner-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #34a853, #1a73e8); display: flex; align-items: center; justify-content: center; font-family: 'Google Sans', sans-serif; font-size: 22px; font-weight: 700; color: white; flex-shrink: 0; }
+        .winner-card-header h2 { font-family: 'Google Sans', sans-serif; font-size: 20px; font-weight: 700; color: #1e7e34; }
+        .winner-card-header p { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+        .winner-card-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 520px) { .winner-card-body { grid-template-columns: 1fr; } }
+        .info-item { display: flex; flex-direction: column; gap: 4px; }
+        .info-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--text-hint); }
+        .info-value { font-size: 15px; color: var(--text-primary); font-weight: 500; }
+
+        /* THANKS */
+        .thanks-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; margin-bottom: 28px; box-shadow: var(--shadow-sm); }
+        .thanks-card h3 { font-family: 'Google Sans', sans-serif; font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 10px; }
+        .thanks-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-width: 500px; margin: 0 auto 16px; }
+        .applicants-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+        .a-chip { font-size: 13px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; color: var(--text-secondary); }
+        .a-chip.winner { background: #e6f4ea; border-color: #34a853; color: #1e7e34; font-weight: 500; }
+
+        /* BENEFITS */
+        .benefits-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; box-shadow: var(--shadow-sm); }
         .section-label { font-family: 'Google Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-hint); margin-bottom: 16px; }
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
-        .step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
-        .step-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 15px; color: white; }
-        .step-num.blue { background: #4285f4; } .step-num.green { background: var(--g-green); }
-        .step-num.yellow { background: var(--g-yellow); color: #5f4a00; } .step-num.red { background: var(--g-red); }
-        .step p { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
-        .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
-        .form-card-header { background: #f8f9fa; border-bottom: 3px solid var(--g-blue); padding: 20px 24px; }
-        .form-card-header h2 { font-family: 'Google Sans', sans-serif; font-size: 18px; font-weight: 500; color: var(--text-primary); }
-        .form-card-header p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
-        .closed-body { padding: 48px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
-        .closed-icon { width: 72px; height: 72px; border-radius: 50%; background: #e8f0fe; display: flex; align-items: center; justify-content: center; }
-        .closed-body h3 { font-family: 'Google Sans', sans-serif; font-size: 20px; font-weight: 500; color: var(--text-primary); }
-        .closed-body p { font-size: 15px; color: var(--text-secondary); max-width: 400px; line-height: 1.6; }
-        .closed-ref { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 20px; font-family: monospace; font-size: 14px; color: var(--g-blue); letter-spacing: 1px; }
+        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 520px) { .benefits-grid { grid-template-columns: 1fr; } }
+        .benefit-item { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .benefit-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+        .benefit-item p { font-size: 13px; color: var(--text-primary); font-weight: 500; }
+        .benefit-item span { font-size: 12px; color: var(--text-secondary); }
+
+        /* COUNTDOWN WAITING STATE in main */
+        .waiting-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 28px; }
+        .waiting-card-header { background: #f8f9fa; border-bottom: 3px solid var(--g-blue); padding: 20px 24px; }
+        .waiting-card-header h2 { font-family: 'Google Sans', sans-serif; font-size: 18px; font-weight: 500; color: var(--text-primary); }
+        .waiting-card-header p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .waiting-body { padding: 48px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+        .waiting-icon { width: 72px; height: 72px; border-radius: 50%; background: #e8f0fe; display: flex; align-items: center; justify-content: center; }
+        .waiting-body h3 { font-family: 'Google Sans', sans-serif; font-size: 20px; font-weight: 500; color: var(--text-primary); }
+        .waiting-body p { font-size: 15px; color: var(--text-secondary); max-width: 400px; line-height: 1.6; }
+        .waiting-ref { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 20px; font-family: monospace; font-size: 14px; color: var(--g-blue); letter-spacing: 1px; }
+
+        /* CONFETTI */
+        .confetti-piece { position: fixed; top: -20px; opacity: 0; animation: confettiFall linear forwards; z-index: 9999; pointer-events: none; }
+        @keyframes confettiFall { 0% { opacity:1; transform: translateY(0) rotate(0deg); } 100% { opacity:0; transform: translateY(105vh) rotate(900deg); } }
+
+        /* FOOTER */
         .site-footer { text-align: center; padding: 32px 20px 24px; font-size: 12px; color: var(--text-hint); line-height: 1.8; }
         .site-footer a { color: var(--g-blue); text-decoration: none; }
+
         @media (max-width: 600px) {
-            .cd-box { min-width: 60px; padding: 12px 14px; }
-            .cd-num { font-size: 28px; }
+            .cd-box { min-width: 64px; padding: 12px 14px; }
+            .cd-num { font-size: 30px; }
             .countdown-boxes { gap: 8px; }
-            .cd-separator { font-size: 24px; }
+            .cd-sep { font-size: 26px; }
         }
     </style>
 </head>
@@ -121,145 +144,165 @@
         <span class="one">One</span>
     </div>
     <div class="header-divider"></div>
-    <span class="header-label">Student Giveaway</span>
+    <span class="header-label" id="headerLabel">Student Giveaway — Result Today!</span>
 </header>
 
-<!-- COUNTDOWN BANNER -->
-<div class="countdown-banner" id="countdownBanner">
-    <div class="announce-label">🎯 Result Announcement — Today!</div>
-    <h2>Winner will be revealed at <span>12:00 PM Today!</span></h2>
+<!-- COUNTDOWN SECTION -->
+<div id="countdownSection" class="countdown-section">
+    <div class="announce-label">🎯 Result Announcement</div>
+    <h2>Winner reveals at <span>1:00 PM Today!</span></h2>
     <div class="countdown-boxes">
-        <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Hours</span></div>
-        <div class="cd-separator">:</div>
-        <div class="cd-box"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Minutes</span></div>
-        <div class="cd-separator">:</div>
-        <div class="cd-box"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Seconds</span></div>
+        <div class="cd-box"><span class="cd-num" id="cdH">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cdM">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span class="cd-num" id="cdS">00</span><span class="cd-label">Seconds</span></div>
     </div>
-    <div class="countdown-note">Stay on this page — winner video will appear automatically! <strong>Don't refresh.</strong></div>
+    <div class="countdown-note">Keep this page open — winner will appear <strong>automatically!</strong> 🎉</div>
 </div>
 
-<!-- WINNER VIDEO SECTION -->
-<div class="winner-section" id="winnerSection">
-    <div class="winner-label">🏆 Winner Announced!</div>
-    <h2>Google One Giveaway <span>Winner 🎉</span></h2>
-    <div class="video-wrap">
-        <iframe id="winnerVideo" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
-    </div>
-    <p class="winner-note">Watch the live random selection above. The winner has been personally contacted via WhatsApp and will receive their Google One family invite on Gmail. JazakAllah to everyone who applied! 🙏</p>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="g-one-badge"><span class="dot" style="background:#ea4335"></span>Applications Closed</div>
-    <h1>Win <span class="accent">Google One</span> Premium<br>Access — Free</h1>
-    <p>Iqbal Hingorjo gave away one Google One family membership slot to a deserving Pakistani university student. The winner is being announced today!</p>
-    <div class="benefits-strip">
-        <div class="benefit-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M12 12h.01"/></svg>Gemini Advanced</div>
-        <div class="benefit-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="10"/><path d="M12 6v6l4 2"/></svg>Google AI Pro</div>
-        <div class="benefit-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#ea4335" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>Meet Premium</div>
-        <div class="benefit-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#fbbc04" stroke-width="2"><path d="M12 5v14M5 12l7-7 7 7"/></svg>Google Drive Storage</div>
-        <div class="benefit-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#9c27b0" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Google Flow & Veo</div>
-    </div>
-</section>
-
-<!-- MAIN -->
-<main class="main">
-    <div class="closed-alert">
-        <span class="icon">🔒</span>
-        <div>
-            <strong>Applications are now closed!</strong>
-            <span>Winner announcement at 12:00 PM today. Keep this page open — video appears automatically!</span>
+<!-- WINNER SECTION (shown after countdown) -->
+<div id="winnerSection" class="winner-section">
+    <div class="winner-hero">
+        <span class="trophy">🏆</span>
+        <div class="winner-badge"><span class="live-dot"></span>Winner Announced</div>
+        <h1>Congratulations<span class="name">Tanisha Kumari! 🎉</span></h1>
+        <p class="winner-sub">Google One Premium access giveaway winner — selected randomly</p>
+        <div class="winner-meta">
+            <div class="wmeta-chip">🎓 Szabist University</div>
+            <div class="wmeta-chip">💻 BS Software Engineering</div>
+            <div class="wmeta-chip">📅 6th Semester</div>
+            <div class="wmeta-chip">📍 Hyderabad</div>
+        </div>
+        <div class="video-container">
+            <!-- Google Drive embed -->
+            <iframe id="winnerVideo" src="https://drive.google.com/file/d/17UXpigQdb7EoDV8YuoEuW0tbJKU-GInU/preview" allowfullscreen allow="autoplay"></iframe>
         </div>
     </div>
 
-    <div class="how-it-works">
-        <div class="section-label">How it works</div>
-        <div class="steps">
-            <div class="step"><div class="step-num blue">1</div><p>Students filled in their details as verified university students</p></div>
-            <div class="step"><div class="step-num green">2</div><p>One winner picked randomly using live Google Sheets formula</p></div>
-            <div class="step"><div class="step-num yellow">3</div><p>Winner gets a Google Family invite on their Gmail</p></div>
-            <div class="step"><div class="step-num red">4</div><p>Enjoy Google One benefits instantly — for free!</p></div>
-        </div>
-    </div>
-
-    <div class="form-card">
-        <div class="form-card-header">
-            <h2>Applications Closed ⏰</h2>
-            <p>Winner announcement happening today at 12:00 PM PKT!</p>
-        </div>
-        <div class="closed-body">
-            <div class="closed-icon">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <main class="main">
+        <div class="winner-card">
+            <div class="winner-card-header">
+                <div class="winner-avatar">T</div>
+                <div>
+                    <h2>🥇 Tanisha Kumari</h2>
+                    <p>Google One Giveaway Winner — June 2026</p>
+                </div>
             </div>
-            <h3>Result Coming Today! 🎯</h3>
-            <p>Thank you to everyone who applied! The winner will be selected randomly on a live recorded Google Sheet and announced at <strong>12:00 PM today</strong>. Keep this page open!</p>
-            <div class="closed-ref">giveaway.iqbalkhan.engineer</div>
-            <p style="font-size:13px; color:var(--text-hint)">Follow on Instagram <a href="https://www.instagram.com/iqbal_hingorjo2123?igsh=Z2N1Y2E0dzE1c282" style="color:var(--g-blue)">@iqbalhingorjo</a> for live updates!</p>
+            <div class="winner-card-body">
+                <div class="info-item"><span class="info-label">University</span><span class="info-value">Szabist University</span></div>
+                <div class="info-item"><span class="info-label">Degree</span><span class="info-value">BS Software Engineering</span></div>
+                <div class="info-item"><span class="info-label">Semester</span><span class="info-value">6th Semester</span></div>
+                <div class="info-item"><span class="info-label">City</span><span class="info-value">Hyderabad</span></div>
+                <div class="info-item"><span class="info-label">Selection Method</span><span class="info-value">Google Sheets RANDBETWEEN</span></div>
+                <div class="info-item"><span class="info-label">Prize</span><span class="info-value">Google One Family Slot</span></div>
+            </div>
         </div>
-    </div>
-</main>
+
+        <div class="thanks-card">
+            <h3>Thank You to All Applicants 🙏</h3>
+            <p>We received amazing applications from deserving students across Pakistan. The winner was selected 100% randomly using a live Google Sheets formula — completely fair and transparent.</p>
+            <div class="applicants-list">
+                <div class="a-chip winner">🏆 Tanisha Kumari</div>
+                <div class="a-chip">Pooja Kumari</div>
+                <div class="a-chip">Sabila</div>
+                <div class="a-chip">Musaib Baloch</div>
+                <div class="a-chip">Yasir Parveez</div>
+            </div>
+        </div>
+
+        <div class="benefits-card">
+            <div class="section-label">What Tanisha Won</div>
+            <div class="benefits-grid">
+                <div class="benefit-item"><div class="benefit-icon" style="background:#e8f0fe">✦</div><div><p>Gemini Advanced</p><span>Google's most capable AI</span></div></div>
+                <div class="benefit-item"><div class="benefit-icon" style="background:#e6f4ea">◈</div><div><p>Google AI Pro</p><span>Advanced AI tools</span></div></div>
+                <div class="benefit-item"><div class="benefit-icon" style="background:#fce8e6">▶</div><div><p>Meet Premium</p><span>Longer group video calls</span></div></div>
+                <div class="benefit-item"><div class="benefit-icon" style="background:#fef7e0">▲</div><div><p>Google Drive Storage</p><span>Extra cloud storage</span></div></div>
+                <div class="benefit-item"><div class="benefit-icon" style="background:#f3e8fd">🎬</div><div><p>Google Flow & Veo</p><span>AI filmmaking tool</span></div></div>
+                <div class="benefit-item"><div class="benefit-icon" style="background:#e8f0fe">🛡️</div><div><p>Google One Benefits</p><span>Full family membership</span></div></div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- WAITING MAIN (shown during countdown) -->
+<div id="waitingMain">
+    <main class="main">
+        <div class="waiting-card">
+            <div class="waiting-card-header">
+                <h2>Applications Closed ⏰</h2>
+                <p>Winner announcement happening today at 1:00 PM PKT!</p>
+            </div>
+            <div class="waiting-body">
+                <div class="waiting-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Result Coming at 1:00 PM! 🎯</h3>
+                <p>Thank you to everyone who applied! The winner will be selected randomly on a live recorded Google Sheet. Keep this page open — the result appears automatically!</p>
+                <div class="waiting-ref">giveaway.iqbalkhan.engineer</div>
+                <p style="font-size:13px; color:var(--text-hint)">Follow on Instagram <a href="https://www.instagram.com/iqbal_hingorjo2123" style="color:var(--g-blue)">@iqbalhingorjo</a> for live updates!</p>
+            </div>
+        </div>
+    </main>
+</div>
 
 <footer class="site-footer">
-    <p>This giveaway is managed by <strong>Iqbal Hingorjo</strong> — Freelance Developer, Hyderabad, Pakistan.</p>
-    <p><a href="https://iqbalkhan.engineer" target="_blank">iqbalkhan.engineer</a> &nbsp;·&nbsp; Not affiliated with Google LLC.</p>
+    <p>This giveaway was managed by <strong>Iqbal Hingorjo</strong> — Freelance Developer, Hyderabad, Pakistan.</p>
+    <p><a href="https://iqbalkhan.engineer" target="_blank">iqbalkhan.engineer</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/iqbal_hingorjo2123" target="_blank">@iqbalhingorjo</a> &nbsp;·&nbsp; Not affiliated with Google LLC.</p>
 </footer>
 
 <script>
-    // ═══════════════════════════════════════════════════════
-    //  STEP 1 — Set today's date (format: YYYY-MM-DD)
-    const TODAY = "2026-06-25";
+    // ═══════════════════════════════════════
+    // Target: Today June 25 2026 at 1:00 PM PKT
+    // ═══════════════════════════════════════
+    const TARGET = new Date("2026-06-25T13:00:00+05:00");
 
-    //  STEP 2 — After recording, paste your YouTube video ID here
-    //  e.g. youtube.com/watch?v=abc123XYZ  →  "abc123XYZ"
-    const YOUTUBE_VIDEO_ID = "YOUR_VIDEO_ID"; // ← REPLACE THIS AFTER RECORDING
-    // ═══════════════════════════════════════════════════════
-
-    const TARGET = new Date(TODAY + "T12:00:00+05:00"); // 12 PM Pakistan time
-    const banner = document.getElementById("countdownBanner");
-    const winnerSection = document.getElementById("winnerSection");
+    const countdownSection = document.getElementById("countdownSection");
+    const winnerSection    = document.getElementById("winnerSection");
+    const waitingMain      = document.getElementById("waitingMain");
+    const headerLabel      = document.getElementById("headerLabel");
 
     function pad(n) { return String(n).padStart(2, "0"); }
 
     function launchConfetti() {
-        const colors = ["#4285f4","#ea4335","#fbbc04","#34a853","#9c27b0","#ff6d00"];
-        for (let i = 0; i < 80; i++) {
-            const el = document.createElement("div");
-            el.className = "confetti-piece";
-            el.style.left = Math.random() * 100 + "vw";
-            el.style.background = colors[Math.floor(Math.random() * colors.length)];
-            el.style.animationDuration = (2 + Math.random() * 3) + "s";
-            el.style.animationDelay = (Math.random() * 2) + "s";
-            el.style.width = el.style.height = (6 + Math.random() * 10) + "px";
-            document.body.appendChild(el);
-            setTimeout(() => el.remove(), 6000);
+        const colors = ["#4285f4","#ea4335","#fbbc04","#34a853","#9c27b0","#ff6d00","#ffffff"];
+        for (let i = 0; i < 120; i++) {
+            setTimeout(() => {
+                const el = document.createElement("div");
+                el.className = "confetti-piece";
+                el.style.left = Math.random() * 100 + "vw";
+                el.style.background = colors[Math.floor(Math.random() * colors.length)];
+                const size = 6 + Math.random() * 12;
+                el.style.width = size + "px";
+                el.style.height = size + "px";
+                el.style.animationDuration = (2.5 + Math.random() * 3) + "s";
+                el.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+                document.body.appendChild(el);
+                setTimeout(() => el.remove(), 7000);
+            }, i * 35);
         }
     }
 
-    function showWinner() {
-        banner.style.display = "none";
-        if (YOUTUBE_VIDEO_ID !== "YOUR_VIDEO_ID") {
-            document.getElementById("winnerVideo").src =
-                "https://www.youtube.com/embed/" + YOUTUBE_VIDEO_ID + "?autoplay=1&rel=0";
-            winnerSection.style.display = "block";
-            launchConfetti();
-            setTimeout(launchConfetti, 3000);
-        } else {
-            // Video not set yet — just hide countdown
-            banner.innerHTML = '<div style="color:#fbbc04;font-family:Google Sans,sans-serif;font-size:16px;padding:20px">🎉 Result is being announced! Check Instagram @iqbalhingorjo</div>';
-        }
+    function revealWinner() {
+        countdownSection.style.display = "none";
+        waitingMain.style.display = "none";
+        winnerSection.style.display = "block";
+        headerLabel.textContent = "Winner Announced! 🎉";
+        launchConfetti();
+        setTimeout(launchConfetti, 4000);
+        setTimeout(launchConfetti, 8000);
         winnerSection.scrollIntoView({ behavior: "smooth" });
     }
 
     function tick() {
-        const now = new Date();
-        const diff = TARGET - now;
-        if (diff <= 0) { showWinner(); return; }
+        const diff = TARGET - new Date();
+        if (diff <= 0) { revealWinner(); return; }
         const h = Math.floor(diff / 3600000);
         const m = Math.floor((diff % 3600000) / 60000);
         const s = Math.floor((diff % 60000) / 1000);
-        document.getElementById("cdHours").textContent = pad(h);
-        document.getElementById("cdMins").textContent = pad(m);
-        document.getElementById("cdSecs").textContent = pad(s);
+        document.getElementById("cdH").textContent = pad(h);
+        document.getElementById("cdM").textContent = pad(m);
+        document.getElementById("cdS").textContent = pad(s);
     }
 
     tick();
